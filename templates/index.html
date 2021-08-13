@@ -1,5 +1,10 @@
 {% extends "layout.html" %}
 {% block body %}
+
+<!-- ------------------ -->
+
+
+<!-- -------------------------------- -->
 <div class="row align-content-center px-5">
     <div class="col-md-12 mx-auto ">
       {% with messages = get_flashed_messages()  %}
@@ -29,7 +34,20 @@
 </div>
 <br><br>
 <div class="container">
-    <table class="table table-striped table-hover table-bordered table-sm bg-white">
+  <div class="cards-list">
+    
+        {% for contact in contacts %}
+        <div class="card">
+          <br>
+          <div class="container">
+            <h4><b>{{contact.0}}</b></h4> 
+            <p>{{contact.2}}</p> 
+          </div>
+        </div>
+        <br>
+        {% endfor %}
+  </div>
+    <!-- <table class="table table-striped table-hover table-bordered table-sm bg-white">
       <thead>
         <tr>
           <td>Title</td>
@@ -49,7 +67,8 @@
         </tr>
         {% endfor %}
       </tbody>
-    </table>
+    </table> -->
+
   </div>
 {% endblock %}
 
